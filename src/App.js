@@ -26,7 +26,7 @@ export function hideData(id){
 
 export function getSinglePage(page_number,m) {
   return new Promise(resolve => {
-    axios.get(`http://hn.algolia.com/api/v1/search?page=${page_number}`)
+    axios.get(`https://hn.algolia.com/api/v1/search?page=${page_number}`)
       .then(res => {
         let all_data = res.data;
         let final_data = [];
