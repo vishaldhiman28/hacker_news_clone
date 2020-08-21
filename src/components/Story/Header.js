@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import {HeaderClass,RankClass,TitleClass,UrlClass,HrefClass} from "./Styles";
+
 
 export default function Header(props) {
 
@@ -12,7 +12,7 @@ export default function Header(props) {
         {props.curRank}.
         {' '}
         <UrlClass>
-        <HrefClass href='#'>&#8679;</HrefClass>
+        <HrefClass href='#' onClick={()=>{props.upVote(props.Id)}}>&#8679;</HrefClass>
       </UrlClass>
       </RankClass>
       <TitleClass href={props.url}>

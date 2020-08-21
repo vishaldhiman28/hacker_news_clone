@@ -33,7 +33,7 @@ export default class Feed extends Component {
   renderList(items) {
     return (
       <ListWrap>
-        {items.map((item, i) => <Story key={item.id} item={item} />)}
+        {items.map((item, i) => <Story key={item.id} item={item} hideData={this.props.hideData} upVote={this.props.upVote}/>)}
       </ListWrap>
 
     );

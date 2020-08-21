@@ -16,6 +16,7 @@ export default class Story extends Component {
           url={item.url}
           title={item.title}
           curRank={item.id}
+          upVote={this.props.upVote}
         />
         <Footer
           author={item.author}
@@ -23,6 +24,7 @@ export default class Story extends Component {
           createdAt={item.created_at}
           Id={item.id}
           numOfComments={item.num_comments}
+          hideData={this.props.hideData}
         />
       </MainClass>
     );

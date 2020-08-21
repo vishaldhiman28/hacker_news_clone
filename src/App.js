@@ -10,19 +10,8 @@ export const ButtonWrapper = styled.div`
 `;
 
 
-export function hideData(id){
-  let data_here = this.state.curStories;
-  for(let k=0;k<data_here.length;k++)
-  {
-    if(data_here[k].id===id){
-      data_here.splice(k,1);
-      break;
-    }
-  }
-  this.setState(prevState=>({
-   curStories: data_here,
-  }))
-}
+
+
 
 export function getSinglePage(page_number,m) {
   return new Promise(resolve => {
@@ -80,14 +69,40 @@ class App extends Component {
   componentDidMount() {
         this.getStories(this.state.pageNumber);
   }
- 
-
-
+  hideData= (id) =>{
+    let data_here = this.state.curStories;
+    for(let k=0;k<data_here.length;k++)
+    {
+      if(data_here[k].id===id){
+        data_here.splice(k,1);
+        break;
+      }
+    }
+    this.setState(prevState=>({
+     curStories: data_here,
+    }))
+  };
+  upVote= (id)=>{
+    let data_here = this.state.curStories;
+    let m=-1;
+    for(let k=0;k<data_here.length;k++)
+    {
+      if(data_here[k].id===id){
+        m=k;
+        break;
+      }
+    }
+    data_here[m].points+=1;
+    this.setState(prevState=>({
+     curStories: data_here,
+    }))
+  };
+  
   render() {
     return (
       <div>
         <MenuBar />
-        <Feed items={this.state.curStories} />
+        <Feed items={this.state.curStories} hideData={this.hideData} upVote={this.upVote}/>
         <ButtonWrapper>
         <button onClick={this.handleClick.bind(this)} >More</button>
         </ButtonWrapper>
