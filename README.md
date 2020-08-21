@@ -9,10 +9,11 @@ It is has functional Hacker News Feed Page for now.
  
  
 ### Current Progress
-<ul>
-    <li><input type="checkbox" checked> Feed Page</li>
-    <li><input type="checkbox" checcked> Pagination</li>
-    <li><input type="checkbox" checked>  Hide News</li>
-    <li><input type="checkbox" >  Up Vote </li>
-  
-</ul>
+* [x] Feed Page (Dynamic)
+* [x] Pagination
+* [x] Hide News
+* [ ] Up Vote
+
+
+### API Service 
+I am using <a href="https://hn.algolia.com/api">HN Search API</a>.
