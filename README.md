@@ -12,7 +12,7 @@ It is has functional Hacker News Feed Page for now.
 * [x] Feed Page (Dynamic)
 * [x] Pagination
 * [x] Hide News
-* [ ] Up Vote
+* [x] Up Vote
 
 
 ### API Service 
